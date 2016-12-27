@@ -9,7 +9,7 @@ export class LoginService {
   }
 
   sendCredential(username: string, password: string) {
-    let url = "http:localhost:8080/index";
+    let url = "http://localhost:8080/index";
     let params = "username=" + username + "&password=" + password;
     let headers = new Headers({
       'Content-type': 'application/x-www-form-urlencoded'
