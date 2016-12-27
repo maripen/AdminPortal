@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit} from "@angular/core";
 import {LoginService} from "../login.service";
 import {Router} from "@angular/router";
 
@@ -12,13 +12,8 @@ export class NavbarComponent implements OnInit {
   loggedIn: boolean;
 
   constructor(private loginService: LoginService, private router: Router) {
-    if (localStorage.getItem("portalAdminHasLoggedIn") == ''
-      || localStorage.getItem("portalAdminHasLoggedIn") == null) {
-      this.loggedIn = false;
-    }
-    else {
-      this.loggedIn = true;
-    }
+    this.loggedIn = !(localStorage.getItem("portalAdminHasLoggedIn") == ''
+    || localStorage.getItem("portalAdminHasLoggedIn") == null);
   }
 
   logout() {

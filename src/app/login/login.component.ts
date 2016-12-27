@@ -1,6 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
-import {LoginService} from '../login.service';
+import {Component, OnInit} from "@angular/core";
+import {LoginService} from "../login.service";
 
 @Component({
   selector: 'app-login',
@@ -14,13 +13,8 @@ export class LoginComponent implements OnInit {
   password: string;
 
   constructor(private loginService: LoginService) {
-    if (localStorage.getItem("portalAdminHasLoggedIn") == ''
-      || localStorage.getItem("portalAdminHasLoggedIn") == null) {
-      this.loggedIn = false;
-    }
-    else {
-      this.loggedIn = true;
-    }
+    this.loggedIn = !(localStorage.getItem("portalAdminHasLoggedIn") == ''
+    || localStorage.getItem("portalAdminHasLoggedIn") == null);
   }
 
   onSubmit() {
