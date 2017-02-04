@@ -40,4 +40,9 @@ export class UserAccountComponent implements OnInit {
     location.reload();
   }
 
+  disableUser(username: String) {
+    this.userService.disableUser(username).subscribe();
+    location.reload();
+  }
+
 }

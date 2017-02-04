@@ -8,7 +8,7 @@ export class UserService {
   }
 
   getUsers() {
-    let url = "http://localhost:8080/api/user/all";
+    let url = "http://localhost:8080/api/user/list";
     return this.http.get(url, {withCredentials: true});
   }
 
